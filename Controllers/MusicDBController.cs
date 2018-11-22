@@ -10,33 +10,24 @@ namespace MVC1.Controllers
 {
     public class MusicDBController : Controller
     {
-        /*
+        /* sample:
         // GET: /<controller>/
-        public IActionResult Index()
-        {
+        public IActionResult Index() {
             return View();
         }
         */
 
         // GET: /MusicDB/
-
-        //public String Index()
         public IActionResult Index()
         {
-            /* Normally you would declare a method returning an iActionResult,
-             * such as we see above. The normal action is to return View();
-             */
-            /*
-            return "This is the default action in MusicDBController, \n" +
-                "It is from /MusicDB.";
-             */
             return View();
         }
 
         // GET: /MusicDB/Catalog/
-        public String Catalog()
+        public IActionResult Catalog()
         {
-            return "This is from /MusicDB/Catalog.";
+            ViewData["MainMsg"] = "ViewData['MainMsg']: from Controllers/MusicDBController.cs";
+            return View();
         }
     }
 }
