@@ -1,19 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MVC1.Models;
 
 namespace MVC1
 {
     public class Startup
     {
+
+        /*
+                public void ConfigureServices(IServiceCollection services)
+                {
+                    // Add framework services.
+                    services.AddMvc();
+
+                    services.AddDbContext<MusicDBContext>(options =>
+                            options.UseSqlite("Data Source=MusicDB.db"));
+
+                }
+        */
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,12 +37,14 @@ namespace MVC1
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false; // was true
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<MusicDBContext>(options => options.UseSqlite("Data Source=MusicDB.db"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,8 +67,8 @@ namespace MVC1
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
