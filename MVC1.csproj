@@ -9,4 +9,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\MusicDB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\MusicDB\Index.html" />
+  </ItemGroup>
 </Project>
