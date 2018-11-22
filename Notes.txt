@@ -1,0 +1,8 @@
+# Start at the controller:
+# Controllers/HomeControllers.cs
+# has class HomeController : Controller
+# has functions for each page in Views/Home/*.cshtml
+# use Views/Home/About.cshtml to experiment
+# use Views/Home/Index.cshtml to comment out the Carousel as well as other stuff
+# need to figure out some models
+
