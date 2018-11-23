@@ -1,6 +1,8 @@
 # Autosave files
 *~
 
+MusicDB.db
+
 # build
 [Oo]bj/
 [Bb]in/
@@ -39,4 +41,3 @@ Thumbs.db
 
 # dotCover
 *.dotCover
-MusicDB.db
