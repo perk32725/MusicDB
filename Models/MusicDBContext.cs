@@ -10,8 +10,7 @@ namespace MVC1.Models
         {
         }
 
-        public DbSet<MVC1.Models.MusicDB> Album { get; set; }
-        public DbSet<MVC1.Models.MusicDB> Artist { get; set; }
-
+        public DbSet<MusicDB> Album { get; set; }
+        public DbSet<MusicDB> Artist { get; set; }
     }
 }
