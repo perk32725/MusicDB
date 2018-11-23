@@ -1,10 +1,12 @@
 @model IEnumerable<MVC1.Models.MusicDB>
 
 @{
+    // this lands in the tab:
     ViewData["Title"] = "Views/MusicDB/Index.cshtml";
 }
 
-<h2>Index</h2>
+@* this is the main heading on the page: *@
+<h2>Views/MusicDB/Index.cshtml</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,10 +15,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Album)
+                @Html.DisplayNameFor(model => model.Album) @* display album *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Artist)
+                @Html.DisplayNameFor(model => model.Artist) @* display artist *@
             </th>
             <th></th>
         </tr>
@@ -25,15 +27,17 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Album)
+                @Html.DisplayFor(modelItem => item.Album) @* display album *@
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Artist)
+                @Html.DisplayFor(modelItem => item.Artist) @* display artist *@
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                @* set up action links: *@
+                @* Details could be used to display tracklist *@
+                <a asp-action="Edit"    asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-action="Delete"  asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
