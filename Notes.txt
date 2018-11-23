@@ -6,8 +6,3 @@
 # use Views/Home/Index.cshtml to comment out the Carousel as well as other stuff
 # need to figure out some models
 
-
-# Models:     Classes that represent the data of the app
-# Views:      Displays the model data
-# Controller: Classes that handle browser requests
-# Every public method in a controller is callable as an HTTP endpoint.
