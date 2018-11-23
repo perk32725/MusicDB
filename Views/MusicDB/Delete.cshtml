@@ -1,7 +1,7 @@
 @model MVC1.Models.MusicDB
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Views/MusicDB/Delete.cshtml";
 }
 
 <h2>Delete</h2>
@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.Artist)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="ID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
